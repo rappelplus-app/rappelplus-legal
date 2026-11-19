@@ -1,17 +1,12 @@
-# Supprimer votre compte Rappel+
+# Comptes Rappel+
 
-**Depuis l'application** : *Paramètres → Supprimer mon compte*, puis confirmez. La suppression est immédiate.
+Depuis le 20 novembre 2026, Rappel+ fonctionne **sans compte** : vos produits et vos alertes restent uniquement sur
+votre téléphone.
 
-**Sans l'application** (désinstallée, téléphone perdu) : écrivez à rappelplussupport@gmail.com depuis l'adresse
-e-mail de votre compte, avec l'objet « Suppression de compte ». Nous supprimons le compte sous 30 jours et vous
-confirmons la suppression par e-mail.
+Tous les comptes créés auparavant ont été supprimés de notre serveur, avec les données qui y étaient associées
+(adresse e-mail, produits, alertes, identifiants de notification). Vous n'avez rien à faire.
 
-## Ce qui est supprimé
+Pour effacer les données gardées sur votre téléphone, supprimez vos produits dans *Mes produits* ou désinstallez
+l'application.
 
-- votre compte (adresse e-mail, mot de passe chiffré) ;
-- vos produits enregistrés, vos alertes et les identifiants de notification de vos téléphones.
-
-Rien n'est conservé, hormis les sauvegardes techniques de l'hébergeur, effacées automatiquement sous quelques jours.
-Les fiches de rappel, publiques, ne sont pas des données vous concernant.
-
-Plus de détails : [politique de confidentialité](./).
+Plus de détails : [politique de confidentialité](./). Questions : rappelplussupport@gmail.com.

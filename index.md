@@ -1,6 +1,6 @@
 # Politique de confidentialité de Rappel+
 
-Dernière mise à jour : 19 novembre 2026
+Dernière mise à jour : 20 novembre 2026
 
 ## Qui est responsable de vos données
 
@@ -13,39 +13,43 @@ site public du gouvernement français.
 
 ## Données collectées
 
-**Sans compte**, votre inventaire ne quitte pas votre téléphone : la liste de vos produits reste uniquement sur
-l'appareil. La comparaison avec les rappels se fait sur le serveur, seulement si vous êtes connecté.
+Rappel+ fonctionne **sans compte**. Votre inventaire (codes-barres, noms et marques saisis, dates d'ajout) et vos
+alertes restent **uniquement sur votre téléphone** : ils ne sont jamais envoyés à notre serveur.
 
-**Avec un compte**, nous conservons :
+Pour savoir si vos produits sont concernés, l'application télécharge la liste publique des rappels (identifiant du
+rappel, codes-barres et lots concernés) et la compare elle-même à vos produits, sur le téléphone. Quand un rappel vous
+concerne, elle télécharge sa fiche complète. Cette demande ne contient que l'identifiant public du rappel, sans rien qui
+vous identifie, mais elle passe par Internet : comme toute requête, elle est vue avec l'adresse IP de votre connexion.
+
+Ce qui transite par nos prestataires :
 
 | Donnée | Pourquoi | Durée de conservation |
 |---|---|---|
-| Adresse e-mail et mot de passe (chiffré, jamais lisible) | Créer et sécuriser votre compte | Jusqu'à la suppression du compte |
-| Codes-barres des produits enregistrés, avec le nom et la marque si vous les saisissez, et la date d'ajout | Comparer vos produits aux rappels | Jusqu'à ce que vous supprimiez le produit ou le compte |
-| Alertes (produit concerné, rappel, date, lu ou non) | Vous montrer les rappels qui vous concernent | Jusqu'à la suppression du produit ou du compte |
-| Identifiant de notification du téléphone (jeton Firebase Cloud Messaging, lié à un identifiant d'installation Firebase) | Vous envoyer les notifications d'alerte | Chez nous : jusqu'à la déconnexion, la suppression du compte, ou son invalidation par Google. Chez Google : selon [ses règles](https://firebase.google.com/support/privacy) |
-| Journaux techniques du serveur (adresse IP, date, requête) | Sécurité et diagnostic | Durée fixée par l'hébergeur (Supabase), quelques jours au plus |
+| Journaux techniques du serveur (adresse IP, date, requête, dont l'identifiant d'un rappel demandé) | Sécurité et diagnostic | Durée fixée par l'hébergeur (Supabase), quelques jours au plus |
+| Jeton de notification Firebase et identifiant d'installation Firebase, abonné au canal commun « nouveaux rappels » | Prévenir l'application qu'il y a de nouveaux rappels | Chez Google, selon [ses règles](https://firebase.google.com/support/privacy). Nous ne les recevons pas |
 
-**Nous ne collectons pas** : photos (la caméra lit le code-barres sur le téléphone, aucune image n'est enregistrée ni
-envoyée), localisation, contacts. Rappel+ n'utilise ni identifiant publicitaire, ni outil de mesure d'audience, ni publicité.
+**Nous ne collectons pas** : adresse e-mail, inventaire, photos (la caméra lit le code-barres sur le téléphone, aucune
+image n'est enregistrée ni envoyée), localisation, contacts. Rappel+ n'utilise ni identifiant publicitaire, ni outil de
+mesure d'audience, ni publicité.
 
 Les fiches de rappel affichées sont des données publiques issues de RappelConso. Elles ne vous concernent pas
 personnellement.
 
 ## Base légale
 
-Le traitement est nécessaire pour fournir le service que vous demandez en créant un compte (article 6.1.b du RGPD).
-Les notifications ne sont envoyées que si vous les autorisez sur votre téléphone.
+Les traitements décrits ci-dessus sont nécessaires pour fournir le service que vous utilisez (article 6.1.b du RGPD),
+et, pour les journaux techniques, à la sécurité du service (intérêt légitime, article 6.1.f). Les notifications ne
+s'affichent que si vous les autorisez sur votre téléphone.
 
 ## Qui reçoit vos données
 
-Aucune donnée n'est vendue ni partagée à des fins commerciales. Trois prestataires techniques les traitent pour notre compte :
+Aucune donnée n'est vendue ni partagée à des fins commerciales. Trois prestataires techniques interviennent :
 
-- **Supabase** (hébergement de la base de données et des comptes). Région d'hébergement : Union européenne (Irlande).
-- **Google Firebase Cloud Messaging** (acheminement des notifications). Le SDK Firebase installé dans l'application
-  communique avec Google (identifiant d'installation, informations techniques sur l'appareil) pour délivrer les
-  notifications. Une notification ne contient que des informations publiques sur le rappel (titre, marque), jamais
-  votre inventaire.
+- **Supabase** (hébergement de la liste publique des rappels). Région d'hébergement : Union européenne (Irlande).
+- **Google Firebase Cloud Messaging** (signal « nouveaux rappels »). Le même message est envoyé à toutes les
+  installations ; il ne contient aucune donnée. Le SDK Firebase installé dans l'application communique avec Google
+  (identifiant d'installation, informations techniques sur l'appareil) pour délivrer ces messages. La notification que
+  vous voyez est créée par l'application elle-même, sur le téléphone.
 - **Google ML Kit** (lecture des codes-barres, sur le téléphone). Aucune image n'est envoyée, mais ML Kit transmet à
   Google des informations techniques (modèle de l'appareil, version de l'application, performances de la lecture,
   identifiant d'installation) pour mesurer et améliorer son fonctionnement.
@@ -55,29 +59,25 @@ sites indiqués dans la fiche de rappel). Comme pour toute page web, ces serveur
 Ces images, publiques, sont gardées en cache sur le téléphone.
 
 Supabase et Google sont des sociétés américaines. Les données sont stockées dans l'Union européenne, mais un accès
-depuis les États-Unis reste possible (support, acheminement des notifications). Ces transferts sont encadrés par les
+depuis les États-Unis reste possible (support, acheminement des messages). Ces transferts sont encadrés par les
 clauses contractuelles types de la Commission européenne prévues dans leurs contrats et, pour Google, par le Data
 Privacy Framework UE–États-Unis.
 
 ## Sécurité
 
 - Toutes les communications sont chiffrées (HTTPS).
-- Chaque utilisateur n'a accès qu'à ses propres données (contrôle d'accès au niveau de la base).
-- Sur le téléphone, la session est chiffrée avec une clé du Keystore Android. Elle est exclue des sauvegardes
-  Android, tout comme la base locale.
+- Le serveur ne contient que des données publiques : il n'y a rien sur vous à y protéger.
+- Votre inventaire est inclus dans la sauvegarde Android de votre téléphone (si vous l'avez activée), pour le retrouver
+  sur un nouvel appareil. Cette sauvegarde est gérée par Google, dans votre compte Google, selon ses règles.
 
 ## Vos droits
 
-Vous pouvez accéder à vos données, les rectifier, les supprimer, en demander la portabilité, vous opposer à leur
-traitement ou en demander la limitation.
+Vos données personnelles sont sur votre téléphone : vous en gardez la maîtrise.
 
-- **Suppression** : dans l'application, *Paramètres → Supprimer mon compte*. Votre compte, vos produits, vos alertes
-  et vos appareils sont supprimés du serveur, puis votre inventaire et votre session sont effacés du téléphone.
-  Les sauvegardes techniques de l'hébergeur peuvent encore contenir ces données quelques jours (selon son offre) avant leur effacement
-  automatique. Si vous avez désinstallé l'application, écrivez à rappelplussupport@gmail.com depuis l'adresse de votre
-  compte : nous le supprimons sous 30 jours.
+- **Suppression** : supprimez un produit dans *Mes produits*, ou désinstallez l'application pour tout effacer.
 - **Rectification** : le nom et la marque d'un produit se modifient dans *Mes produits*.
-- **Autres demandes** (accès, portabilité, questions) : rappelplussupport@gmail.com.
+- **Autres demandes** (questions, journaux techniques) : rappelplussupport@gmail.com. Comme nous ne pouvons pas relier
+  ces journaux à une personne, nous pourrons vous demander des éléments (adresse IP, dates) pour les retrouver.
 
 Si vous estimez que vos droits ne sont pas respectés, vous pouvez adresser une réclamation à la CNIL (www.cnil.fr).
 
