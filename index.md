@@ -77,7 +77,7 @@ Privacy Framework UE–États-Unis.
 Vos données personnelles sont sur votre téléphone : vous en gardez la maîtrise.
 
 - **Suppression** : supprimez un produit dans *Mes produits*, ou désinstallez l'application pour tout effacer.
-- **Rectification** : le nom et la marque d'un produit se modifient dans *Mes produits*.
+- **Rectification** : le nom, la marque et la date de péremption d'un produit se modifient dans *Mes produits*.
 - **Autres demandes** (questions, journaux techniques) : rappelplussupport@gmail.com. Comme nous ne pouvons pas relier
   ces journaux à une personne, nous pourrons vous demander des éléments (adresse IP, dates) pour les retrouver.
 
