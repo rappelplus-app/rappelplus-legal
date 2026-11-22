@@ -1,6 +1,6 @@
 # Politique de confidentialité de Rappel+
 
-Dernière mise à jour : 20 novembre 2026
+Dernière mise à jour : 22 novembre 2026
 
 ## Qui est responsable de vos données
 
@@ -25,7 +25,10 @@ Pour le **scan de ticket de caisse**, l'application télécharge aussi le texte 
 12 derniers mois (nom, marque, distributeurs, zones et dates de vente) et le compare elle-même aux lignes du ticket. La
 photo du ticket est lue sur le téléphone : prise avec l'appareil photo, elle reste en mémoire le temps de la lecture,
 puis est oubliée, sans jamais être enregistrée ; choisie dans votre galerie, elle est seulement lue. Ni la photo ni le
-texte du ticket ne sont envoyés ou conservés. Si vous indiquez votre département dans les réglages (facultatif), il
+texte du ticket ne sont envoyés ou conservés, sauf si vous choisissez de **suivre le ticket** (option payante Rappel+
+Pro) : ses lignes produit, l'enseigne et la date d'achat sont alors enregistrées sur votre téléphone jusqu'à 6 mois
+après la date d'achat, pour les comparer à chaque nouveau rappel. Elles ne sont jamais envoyées et sont exclues de la sauvegarde
+Android ; vous pouvez arrêter le suivi à tout moment (Réglages → Tickets suivis). Si vous indiquez votre département dans les réglages (facultatif), il
 sert uniquement à ce rapprochement et reste sur votre téléphone.
 
 Ce qui transite par nos prestataires :
@@ -50,13 +53,15 @@ s'affichent que si vous les autorisez sur votre téléphone.
 
 ## Qui reçoit vos données
 
-Aucune donnée n'est vendue ni partagée à des fins commerciales. Trois prestataires techniques interviennent :
+Aucune donnée n'est vendue ni partagée à des fins commerciales. Quatre prestataires techniques interviennent :
 
 - **Supabase** (hébergement de la liste publique des rappels). Région d'hébergement : Union européenne (Irlande).
 - **Google Firebase Cloud Messaging** (signal « nouveaux rappels »). Le même message est envoyé à toutes les
   installations ; il ne contient aucune donnée. Le SDK Firebase installé dans l'application communique avec Google
   (identifiant d'installation, informations techniques sur l'appareil) pour délivrer ces messages. La notification que
   vous voyez est créée par l'application elle-même, sur le téléphone.
+- **Google Play** (achat de Rappel+ Pro, facultatif). Le paiement est traité par Google selon ses propres règles ;
+  l'application ne reçoit que la confirmation de l'achat, jamais vos coordonnées de paiement.
 - **Google ML Kit** (lecture des codes-barres et du texte des tickets de caisse, sur le téléphone). Aucune image ni
   aucun texte n'est envoyé, mais ML Kit transmet à
   Google des informations techniques (modèle de l'appareil, version de l'application, performances de la lecture,
@@ -83,7 +88,8 @@ Privacy Framework UE–États-Unis.
 
 Vos données personnelles sont sur votre téléphone : vous en gardez la maîtrise.
 
-- **Suppression** : supprimez un produit dans *Mes produits*, ou désinstallez l'application pour tout effacer.
+- **Suppression** : supprimez un produit dans *Mes produits*, arrêtez le suivi d'un ticket dans *Réglages → Tickets
+  suivis*, ou désinstallez l'application pour tout effacer.
 - **Rectification** : le nom et la marque d'un produit se modifient dans *Mes produits*.
 - **Autres demandes** (questions, journaux techniques) : rappelplussupport@gmail.com. Comme nous ne pouvons pas relier
   ces journaux à une personne, nous pourrons vous demander des éléments (adresse IP, dates) pour les retrouver.
