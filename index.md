@@ -13,23 +13,13 @@ site public du gouvernement français.
 
 ## Données collectées
 
-Rappel+ fonctionne **sans compte**. Votre inventaire (codes-barres, noms et marques saisis, dates d'ajout) et vos
+Rappel+ fonctionne **sans compte**. Votre inventaire (codes-barres, noms et marques saisis, dates d'ajout et de péremption) et vos
 alertes restent **uniquement sur votre téléphone** : ils ne sont jamais envoyés à notre serveur.
 
 Pour savoir si vos produits sont concernés, l'application télécharge la liste publique des rappels (identifiant du
 rappel, codes-barres et lots concernés) et la compare elle-même à vos produits, sur le téléphone. Quand un rappel vous
 concerne, elle télécharge sa fiche complète. Cette demande ne contient que l'identifiant public du rappel, sans rien qui
 vous identifie, mais elle passe par Internet : comme toute requête, elle est vue avec l'adresse IP de votre connexion.
-
-Pour le **scan de ticket de caisse**, l'application télécharge aussi le texte public des rappels alimentaires des
-12 derniers mois (nom, marque, distributeurs, zones et dates de vente) et le compare elle-même aux lignes du ticket. La
-photo du ticket est lue sur le téléphone : prise avec l'appareil photo, elle reste en mémoire le temps de la lecture,
-puis est oubliée, sans jamais être enregistrée ; choisie dans votre galerie, elle est seulement lue. Ni la photo ni le
-texte du ticket ne sont envoyés ou conservés, sauf si vous choisissez de **suivre le ticket** (option payante Rappel+
-Pro) : ses lignes produit, l'enseigne et la date d'achat sont alors enregistrées sur votre téléphone jusqu'à 6 mois
-après la date d'achat, pour les comparer à chaque nouveau rappel. Elles ne sont jamais envoyées et sont exclues de la sauvegarde
-Android ; vous pouvez arrêter le suivi à tout moment (Réglages → Tickets suivis). Si vous indiquez votre département dans les réglages (facultatif), il
-sert uniquement à ce rapprochement et reste sur votre téléphone.
 
 Ce qui transite par nos prestataires :
 
@@ -38,8 +28,8 @@ Ce qui transite par nos prestataires :
 | Journaux techniques du serveur (adresse IP, date, requête, dont l'identifiant d'un rappel demandé) | Sécurité et diagnostic | Durée fixée par l'hébergeur (Supabase), quelques jours au plus |
 | Jeton de notification Firebase et identifiant d'installation Firebase, abonné au canal commun « nouveaux rappels » | Prévenir l'application qu'il y a de nouveaux rappels | Chez Google, selon [ses règles](https://firebase.google.com/support/privacy). Nous ne les recevons pas |
 
-**Nous ne collectons pas** : adresse e-mail, inventaire, photos et tickets de caisse (la caméra lit le code-barres ou
-le ticket sur le téléphone, aucune image n'est enregistrée ni envoyée), département, localisation, contacts. Rappel+ n'utilise ni identifiant publicitaire, ni outil de
+**Nous ne collectons pas** : adresse e-mail, inventaire, photos (la caméra lit le code-barres et la date de péremption sur le téléphone,
+aucune image n'est enregistrée ni envoyée ; une photo choisie dans la galerie est seulement lue), localisation, contacts. Rappel+ n'utilise ni identifiant publicitaire, ni outil de
 mesure d'audience, ni publicité.
 
 Les fiches de rappel affichées sont des données publiques issues de RappelConso. Elles ne vous concernent pas
@@ -62,15 +52,13 @@ Aucune donnée n'est vendue ni partagée à des fins commerciales. Quatre presta
   vous voyez est créée par l'application elle-même, sur le téléphone.
 - **Google Play** (achat de Rappel+ Pro, facultatif). Le paiement est traité par Google selon ses propres règles ;
   l'application ne reçoit que la confirmation de l'achat, jamais vos coordonnées de paiement.
-- **Google ML Kit** (lecture des codes-barres et du texte des tickets de caisse, sur le téléphone). Aucune image ni
-  aucun texte n'est envoyé, mais ML Kit transmet à
+- **Google ML Kit** (lecture des codes-barres et des dates de péremption, sur le téléphone). Aucune image n'est envoyée, mais ML Kit transmet à
   Google des informations techniques (modèle de l'appareil, version de l'application, performances de la lecture,
   identifiant d'installation) pour mesurer et améliorer son fonctionnement.
 
 Les photos des produits rappelés sont chargées directement depuis les serveurs qui les hébergent (RappelConso ou les
 sites indiqués dans la fiche de rappel). Comme pour toute page web, ces serveurs voient l'adresse IP de votre téléphone.
-Ces images, publiques, sont gardées en cache sur le téléphone (y compris celles des rappels proposés après le scan
-d'un ticket : une trace indirecte de ce ticket, qui ne quitte pas le téléphone).
+Ces images, publiques, sont gardées en cache sur le téléphone.
 
 Supabase et Google sont des sociétés américaines. Les données sont stockées dans l'Union européenne, mais un accès
 depuis les États-Unis reste possible (support, acheminement des messages). Ces transferts sont encadrés par les
@@ -81,15 +69,14 @@ Privacy Framework UE–États-Unis.
 
 - Toutes les communications sont chiffrées (HTTPS).
 - Le serveur ne contient que des données publiques : il n'y a rien sur vous à y protéger.
-- Votre inventaire (et votre département, si vous l'avez indiqué) est inclus dans la sauvegarde Android de votre téléphone (si vous l'avez activée), pour le retrouver
+- Votre inventaire est inclus dans la sauvegarde Android de votre téléphone (si vous l'avez activée), pour le retrouver
   sur un nouvel appareil. Cette sauvegarde est gérée par Google, dans votre compte Google, selon ses règles.
 
 ## Vos droits
 
 Vos données personnelles sont sur votre téléphone : vous en gardez la maîtrise.
 
-- **Suppression** : supprimez un produit dans *Mes produits*, arrêtez le suivi d'un ticket dans *Réglages → Tickets
-  suivis*, ou désinstallez l'application pour tout effacer.
+- **Suppression** : supprimez un produit dans *Mes produits*, ou désinstallez l'application pour tout effacer.
 - **Rectification** : le nom et la marque d'un produit se modifient dans *Mes produits*.
 - **Autres demandes** (questions, journaux techniques) : rappelplussupport@gmail.com. Comme nous ne pouvons pas relier
   ces journaux à une personne, nous pourrons vous demander des éléments (adresse IP, dates) pour les retrouver.
