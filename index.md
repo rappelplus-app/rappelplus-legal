@@ -1,6 +1,6 @@
 # Politique de confidentialité de Rappel+
 
-Dernière mise à jour : 22 novembre 2026
+Dernière mise à jour : 23 novembre 2026
 
 ## Qui est responsable de vos données
 
@@ -20,6 +20,12 @@ Pour savoir si vos produits sont concernés, l'application télécharge la liste
 rappel, codes-barres et lots concernés) et la compare elle-même à vos produits, sur le téléphone. Quand un rappel vous
 concerne, elle télécharge sa fiche complète. Cette demande ne contient que l'identifiant public du rappel, sans rien qui
 vous identifie, mais elle passe par Internet : comme toute requête, elle est vue avec l'adresse IP de votre connexion.
+
+Après un scan, le bouton « Chercher le nom » propose de remplir le nom et la marque du produit. **Seulement si vous
+appuyez dessus**, l'application envoie ce code-barres, et lui seul, à Open Food Facts, une base publique et
+collaborative de produits (association française). Comme toute requête, elle est vue avec l'adresse IP de votre
+connexion. Sans ce geste, aucun code-barres ne quitte le téléphone. Les noms et marques proviennent de la base Open Food
+Facts, sous licence ODbL.
 
 Ce qui transite par nos prestataires :
 
@@ -58,6 +64,8 @@ Aucune donnée n'est vendue ni partagée à des fins commerciales. Quatre presta
 
 Les photos des produits rappelés sont chargées directement depuis les serveurs qui les hébergent (RappelConso ou les
 sites indiqués dans la fiche de rappel). Comme pour toute page web, ces serveurs voient l'adresse IP de votre téléphone.
+De même, le code-barres d'un produit dont vous demandez le nom est envoyé à Open Food Facts
+([ses règles](https://world.openfoodfacts.org/privacy)), hébergé en France.
 Ces images, publiques, sont gardées en cache sur le téléphone.
 
 Supabase et Google sont des sociétés américaines. Les données sont stockées dans l'Union européenne, mais un accès
