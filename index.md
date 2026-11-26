@@ -1,6 +1,6 @@
 # Politique de confidentialité de Rappel+
 
-Dernière mise à jour : 23 novembre 2026
+Dernière mise à jour : 26 novembre 2026
 
 ## Qui est responsable de vos données
 
@@ -13,7 +13,7 @@ site public du gouvernement français.
 
 ## Données collectées
 
-Rappel+ fonctionne **sans compte**. Votre inventaire (codes-barres, noms et marques saisis, dates d'ajout et de péremption) et vos
+Rappel+ fonctionne **sans compte**. Votre inventaire (codes-barres, noms et marques saisis, dates d'ajout) et vos
 alertes restent **uniquement sur votre téléphone** : ils ne sont jamais envoyés à notre serveur.
 
 Pour savoir si vos produits sont concernés, l'application télécharge la liste publique des rappels (identifiant du
@@ -34,8 +34,8 @@ Ce qui transite par nos prestataires :
 | Journaux techniques du serveur (adresse IP, date, requête, dont l'identifiant d'un rappel demandé) | Sécurité et diagnostic | Durée fixée par l'hébergeur (Supabase), quelques jours au plus |
 | Jeton de notification Firebase et identifiant d'installation Firebase, abonné au canal commun « nouveaux rappels » | Prévenir l'application qu'il y a de nouveaux rappels | Chez Google, selon [ses règles](https://firebase.google.com/support/privacy). Nous ne les recevons pas |
 
-**Nous ne collectons pas** : adresse e-mail, inventaire, photos (la caméra lit le code-barres et la date de péremption sur le téléphone,
-aucune image n'est enregistrée ni envoyée ; une photo choisie dans la galerie est seulement lue), localisation, contacts. Rappel+ n'utilise ni identifiant publicitaire, ni outil de
+**Nous ne collectons pas** : adresse e-mail, inventaire, photos (la caméra lit le code-barres sur le téléphone, aucune
+image n'est enregistrée ni envoyée), localisation, contacts. Rappel+ n'utilise ni identifiant publicitaire, ni outil de
 mesure d'audience, ni publicité.
 
 Les fiches de rappel affichées sont des données publiques issues de RappelConso. Elles ne vous concernent pas
@@ -58,7 +58,7 @@ Aucune donnée n'est vendue ni partagée à des fins commerciales. Quatre presta
   vous voyez est créée par l'application elle-même, sur le téléphone.
 - **Google Play** (achat de Rappel+ Pro, facultatif). Le paiement est traité par Google selon ses propres règles ;
   l'application ne reçoit que la confirmation de l'achat, jamais vos coordonnées de paiement.
-- **Google ML Kit** (lecture des codes-barres et des dates de péremption, sur le téléphone). Aucune image n'est envoyée, mais ML Kit transmet à
+- **Google ML Kit** (lecture des codes-barres, sur le téléphone). Aucune image n'est envoyée, mais ML Kit transmet à
   Google des informations techniques (modèle de l'appareil, version de l'application, performances de la lecture,
   identifiant d'installation) pour mesurer et améliorer son fonctionnement.
 
@@ -85,7 +85,7 @@ Privacy Framework UE–États-Unis.
 Vos données personnelles sont sur votre téléphone : vous en gardez la maîtrise.
 
 - **Suppression** : supprimez un produit dans *Mes produits*, ou désinstallez l'application pour tout effacer.
-- **Rectification** : le nom, la marque et la date de péremption d'un produit se modifient dans *Mes produits*.
+- **Rectification** : le nom et la marque d'un produit se modifient dans *Mes produits*.
 - **Autres demandes** (questions, journaux techniques) : rappelplussupport@gmail.com. Comme nous ne pouvons pas relier
   ces journaux à une personne, nous pourrons vous demander des éléments (adresse IP, dates) pour les retrouver.
 
